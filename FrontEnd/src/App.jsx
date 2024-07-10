@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import FetchData from './services/API/FetchData'
+import HomePage from './pages/HomePage/HomePage'
+import LoginForm from './components/Ui/LoginForm/LoginForm'
+
 
 function App() {
 
   return (
     <div>
-      <FetchData />
+      <LoginForm />
     </div>
   )
 }

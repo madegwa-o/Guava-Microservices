@@ -1,5 +1,6 @@
 package com.Guava.UserAuthentication.user;
 
+import com.Guava.UserAuthentication.dtos.RegisterRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -13,4 +14,7 @@ public class UserService {
         return userRepo.findByEmail( email);
     }
 
+    public AppUser saveUser(AppUser user) {
+        return userRepo.save(user);
+    }
 }

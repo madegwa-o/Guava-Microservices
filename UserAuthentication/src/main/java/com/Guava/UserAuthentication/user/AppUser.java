@@ -18,6 +18,6 @@ public class AppUser {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long userId;
 
-    private String userName;
+    private String email;
     private String password;
 }

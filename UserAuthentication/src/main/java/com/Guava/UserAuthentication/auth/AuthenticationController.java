@@ -7,6 +7,8 @@ import com.Guava.UserAuthentication.token.JwtTokenService;
 import com.Guava.UserAuthentication.user.CustomUserDetails;
 import com.Guava.UserAuthentication.user.CustomUserDetailsService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -47,7 +49,7 @@ public class AuthenticationController {
 
         //set response
         AuthResponse response = new AuthResponse(token,userDetails);
-        return null;
+        return new ResponseEntity(response, HttpStatus.ACCEPTED);
     }
 
 }

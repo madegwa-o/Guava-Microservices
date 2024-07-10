@@ -1,25 +1,31 @@
 package com.Guava.UserAuthentication.user;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
-
+@RequiredArgsConstructor
 public class CustomUserDetails implements UserDetails {
+
+    private final AppUser user;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of();
+        return Collections.singleton(new SimpleGrantedAuthority("ROLE_USER"));
     }
 
     @Override
     public String getPassword() {
-        return "";
+        return user.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return "";
+        return user.getEmail();
     }
 
     @Override
